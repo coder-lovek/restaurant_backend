@@ -11,6 +11,9 @@ app.use(cors({
     methods: ["POST"],
     credentials: true
 }));
+app.get("/", (req, res) => {
+    res.send("Backend is running!");
+});
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use('/api/v1/reservation', reservationRoutes);
